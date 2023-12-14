@@ -6,7 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/11/17 16:34:52 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 09:20:37 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/minirt.h"
+
+int main (int argc, char **argv)
+{
+	
+}

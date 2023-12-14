@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:40:00 by dhadding          #+#    #+#             */
-/*   Updated: 2023/11/10 17:01:36 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:56:36 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,15 @@ typedef struct s_list
 	void				*content;
 	struct s_list		*next;
 }	t_list;
+
+typedef struct s_strjoin_e
+{
+	va_list	arg;
+	char	*out;
+	char	*tmp;
+	int		i;
+	int		j;
+}	t_sje;
 
 /* Part 1 Functions */
 int		ft_isalpha(int c);
@@ -64,14 +73,12 @@ char	*ft_strndup(const char *s, size_t n);
 
 /* Additional Functions */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-size_t	ft_lstlen(char **list);
-char	**ft_tabcpy(char **in, char **out);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -116,5 +123,8 @@ char	*ft_uitoa(unsigned int n);
 char	*strjoin_e(unsigned int c, ...);
 void	*malloc_strlen_n(unsigned int c, va_list arg);
 bool	is_whitespace(char *s);
+int		ft_strcmp(char *s1, char *s2);
+char	**ft_tabdup(char **in);
+size_t	ft_lstlen(char **list);
 
 #endif

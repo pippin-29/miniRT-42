@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:01:41 by dhadding          #+#    #+#             */
-/*   Updated: 2023/11/10 16:29:01 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/03 10:18:33 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ void	*malloc_strlen_n(unsigned int c, va_list arg)
 	va_end(arg_copy);
 	return (malloc(sizeof(char) * (size + 1)));
 }
-
-typedef struct s_strjoin_e
-{
-	va_list	arg;
-	char	*out;
-	char	*tmp;
-	int		i;
-	int		j;
-}	t_sje;
 
 char	*strjoin_e(unsigned int c, ...)
 {

@@ -36,6 +36,7 @@ SOURCE = \
 		srcs/ft_strlcat.c \
 		srcs/ft_strlcpy.c \
 		srcs/ft_strncmp.c \
+		srcs/ft_strcmp.c \
 		srcs/ft_strnstr.c \
 		srcs/ft_itoa.c \
 		srcs/ft_strmapi.c \
@@ -61,7 +62,7 @@ SOURCE = \
 		srcs/ft_printf.c \
 		srcs/ft_strndup.c \
 		srcs/ft_lstlen.c \
-		srcs/ft_tabcpy.c \
+		srcs/ft_tabdup.c 
 
 OBJECT = $(SOURCE:%.c=%.o)
 
@@ -72,9 +73,9 @@ all: $(NAME)
 
 $(NAME):	$(OBJECT)
 					ar rc  $(NAME) $(OBJECT)
-clean:				
+clean:			
 					rm -f $(OBJECT)
-fclean:		clean	
+fclean:	clean
 					rm -f $(NAME)
 
-re:			fclean all
+re:			fclean all clean

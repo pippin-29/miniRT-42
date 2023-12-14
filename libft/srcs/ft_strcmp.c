@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpawson < tpawson@student.42adel.org.au    +#+  +:+       +#+        */
+/*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:40:33 by tpawson           #+#    #+#             */
-/*   Updated: 2023/11/13 15:41:25 by tpawson          ###   ########.fr       */
+/*   Updated: 2023/11/28 10:26:04 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i; 
+	int	i;
+
 	i = 0;
-	while(s1[i] == s2[i] && s1[i] && s2[i])
+	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
-	return(s1[i] - s2[i]);
+	return (s1[i] - s2[i]);
 }

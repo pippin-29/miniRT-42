@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 08:15:27 by dhadding          #+#    #+#             */
-/*   Updated: 2023/11/10 16:52:21 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:56:21 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	unsigned int	i;
 	unsigned int	j;
