@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 12:49:37 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:53:18 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,17 @@ int		object_present_in_file(char *line, t_program *program)
 	return (0);
 }
 
+void	parse_line(char *line, t_program *program)
+{
+	
+}
 
-void	check_line(char *line, t_program *program)
+int	check_line(char *line, t_program *program)
 {
 	if (object_present_in_file(line, program))
 	{
-
+		parse_line(line, program);
+		return (1);
 	}
 	else
 	{
