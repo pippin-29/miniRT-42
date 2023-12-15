@@ -3,4 +3,6 @@
  - 0.xx (X changes on incremental change)
 
 # 0.00
+ - Makefile Complete For Now
+ - Header File Inclusions
 
