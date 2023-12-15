@@ -61,7 +61,7 @@ libs:
 re: libs fclean all
 
 
-.PHONY: clean fclean arch_change re
+.PHONY: clean fclean libs re
 .SILENT:
 
 
