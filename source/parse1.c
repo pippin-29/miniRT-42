@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 13:00:54 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 13:21:52 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,20 @@ int		rt_object(char *line, t_program *program)
 	i = 0;
 	while(line[i] == ' ')
 		i++;
-	if (line[i] == '\0');
-		return (1);
 	if (line[i] == 'A' && line[i + 1] == ' ')
 	{
 		program->no_amb_light++;
-		return (1);
+		return (AMBIENT);
 	}
 	else if (line[i] == 'C' && line[i + 1] == ' ')
 	{
 		program->no_camera++;
-		return (1);
+		return (CAMERA);
 	}
 	else if (line[i] == 'L' && line[i + 1] == ' ')
 	{
 		program->no_light++;
-		return (1);
+		return (LIGHT);
 	}
 	return (0);
 }
@@ -47,21 +45,21 @@ int		scene_object(char *line, t_program *program)
 	while(line[i] == ' ')
 		i++;
 	if (line[i] == '\0');
-		return (1);
+		return (EMPTY_LINE);
 	if (line[i] == 'p' && line[i + 1] == 'l' && line[i + 2] == ' ')
 	{
 		program->no_planes++;
-		return (1);
+		return (PLANE);
 	}	
 	else if (line[i] == 's' && line[i + 1] == 'p' && line[i + 2] == ' ')
 	{
 		program->no_spheres++;
-		return (1);
+		return (SPHERE);
 	}
 	else if (line[i] == 'c' && line[i + 1] == 'y' && line[i + 2] == ' ')
 	{
 		program->no_cylinders++;
-		return (1);
+		return (CYLINDER);
 	}
 	return (0);
 }
@@ -69,18 +67,25 @@ int		scene_object(char *line, t_program *program)
 
 int		object_present_in_file(char *line, t_program *program)
 {
-	if (scene_object(line, program))
-		return (1);
-	if (rt_object(line, program))
-		return (1);
-	return (0);
+	int ret;
+
+	ret = 0;
+	ret = scene_object(line, program);
+	if (ret)
+		return (ret);
+	else
+		ret = rt_object(line, program);	
+	return (ret);
 }
 
 int	check_line(char *line, t_program *program)
 {
-	if (object_present_in_file(line, program))
+	int object;
+
+	object = object_present_in_file(line, program);
+	if (object)
 	{
-		parse_line(line, program);
+		parse_line(line, program, object);
 		return (1);
 	}
 	else

@@ -6,55 +6,55 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 12:39:08 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:34:48 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_TYPES_H
 # define MINIRT_TYPES_H
 
-typedef unsigned char	t_u8;
+typedef unsigned int	t_u32;
 
 typedef struct s_sphere
 {
-	float	coord[3];
+	float	*coord;
 	float	diam;
-	t_u8	rgb[3];
+	t_u32	*rgb;
 }	t_sphere;
 
 typedef struct s_plane
 {
-	float	coord[3];
-	float	normal_vector[3];
-	t_u8	rgb[3];
+	float	*coord;
+	float	*normal_vector;
+	t_u32	*rgb;
 }	t_plane;
 
 typedef struct s_cylinder
 {
-	float	coord[3];
-	float	normal_vector[3];
+	float	*coord;
+	float	*normal_vector;
 	float	diam;
 	float	height;
-	t_u8	rgb[3];
+	t_u32	*rgb;
 }	t_cylinder;
 
 typedef struct s_camera
 {
-	float	coord[3];
-	float	normal_vector[3];
-	t_u8	fov;
+	float	*coord;
+	float	*normal_vector;
+	t_u32	fov;
 }	t_camera;
 
 typedef struct s_light
 {
-	float	coord[3];
+	float	*coord;
 	float	brightness;
 }	t_light;
 
 typedef struct s_amb_light
 {
 	float	brightness;
-	t_u8	rgb[3];
+	t_u32	*rgb;
 }	t_amb_light;
 
 typedef struct s_program
@@ -65,12 +65,12 @@ typedef struct s_program
 	t_camera	*camera;
 	t_light		*light;
 	t_amb_light	*amb_light;
-	t_u8		no_spheres;
-	t_u8		no_planes;
-	t_u8		no_cylinders;
-	t_u8		no_light;
-	t_u8		no_amb_light;
-	t_u8		no_camera;
+	t_u32		no_spheres;
+	t_u32		no_planes;
+	t_u32		no_cylinders;
+	t_u32		no_light;
+	t_u32		no_amb_light;
+	t_u32		no_camera;
 	int			scene_fd;
 }	t_program;
 
