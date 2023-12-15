@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 11:52:51 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:39:08 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ typedef struct s_program
 	t_u8		no_spheres;
 	t_u8		no_planes;
 	t_u8		no_cylinders;
+	t_u8		no_light;
+	t_u8		no_amb_light;
+	t_u8		no_camera;
 	int			scene_fd;
 }	t_program;
 
