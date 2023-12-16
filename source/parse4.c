@@ -6,12 +6,8 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 14:44:18 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:58:06 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void error_parse()
-{
-	printf("Error; Parse;\n");
-	exit(-1);
-}
+#include "../includes/minirt_functions.h"

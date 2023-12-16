@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:58 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 13:34:17 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:00:46 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void	parse_camera(char *line, t_program *program)
 {
 	
 }
-

@@ -6,15 +6,15 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:07:10 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 14:12:29 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:03:28 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt_functions.h"
 
-int is_float(char *c)
+int	is_float(char *c)
 {
-	int i = 0;
+	int	i = 0;
 	int decimal_pos = 0;
 	int decimal_present = 0;
 	int negative = 0;

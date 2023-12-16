@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:35:03 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 14:08:47 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 04:46:17 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <errno.h>
+# include <string.h>
 # include <math.h>
 # include "../libft/includes/libft.h"
 # include "minirt_macro.h"
