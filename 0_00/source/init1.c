@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:57:39 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 06:26:02 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 07:42:03 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,7 @@ void	program_init(t_program *program, char *filename)
 	program->no_cylinders = 0;
 	program->no_planes = 0;
 	program->no_spheres = 0;
+	program->no_amb_light = 0;
+	program->no_camera = 0;
+	program->no_light = 0;
 }
