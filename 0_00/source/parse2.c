@@ -6,11 +6,11 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:58 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 05:34:22 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 06:17:05 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt_functions.h"
+#include "../includes/minirt.h"
 
 void	parse_line(char *line, t_program *program, int object)
 {
@@ -93,7 +93,7 @@ void	parse_camera(char *line, t_program *program)
 
 	i = 0;
 	if (program->no_camera > 1)
-		parse_error("Too Many Cameras Detected!");
+		error_parse("Too Many Cameras Detected!");
 	while (line[i] == ' ')
 		i++;
 	program->camera->coord = load_coordinates(&line[i], program);

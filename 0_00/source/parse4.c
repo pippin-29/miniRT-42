@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 05:35:30 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 06:21:14 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt_functions.h"
+#include "../includes/minirt.h"
 
-float	load_brightness_ratio(char *line, t_program *program)
+float	load_brightness_ratio(char *line)
 {
 	float	out;
 	char 	*temp;
@@ -34,7 +34,7 @@ float	load_brightness_ratio(char *line, t_program *program)
 	return (out);
 }
 
-float	*load_normal_vector(char *line, t_program *program)
+float	*load_normal_vector(char *line)
 {
 	float	*out;
 	char	*temp;
@@ -58,16 +58,16 @@ float	*load_normal_vector(char *line, t_program *program)
 			q++;
 			i++;
 		}
-		out[l] = ft_atof(temp);
+		out[l] = atof(temp);
 		if (out[l] < 0.0 || out[l] > 1.0)
-			parse_error("Normallized Vector Range ( 0.0 - 1.0 )");
+			error_parse("Normallized Vector Range ( 0.0 - 1.0 )");
 		l++;
 	}
 	free(temp);
 	return (out);
 }
 
-float	load_dimension(char *line, t_program *program)
+float	load_dimension(char *line)
 {
 	float	out;
 	char 	*temp;
@@ -87,7 +87,7 @@ float	load_dimension(char *line, t_program *program)
 	return (out);
 }
 
-float	*load_coordinates(char *line, t_program *program)
+float	*load_coordinates(char *line)
 {
 	float	*out;
 	char	*temp;
@@ -111,14 +111,14 @@ float	*load_coordinates(char *line, t_program *program)
 			q++;
 			i++;
 		}
-		out[l] = ft_atof(temp);
+		out[l] = atof(temp);
 		l++;
 	}
 	free(temp);
 	return (out);
 }
 
-t_u32	*load_rgb_values(char *line, t_program *program)
+t_u32	*load_rgb_values(char *line)
 {
 	char	*temp;
 	t_u32	*out;

@@ -6,11 +6,11 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 05:38:43 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 06:16:38 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt_functions.h"
+#include "../includes/minirt.h"
 
 int		rt_object(char *line, t_program *program)
 {
@@ -37,14 +37,14 @@ int		rt_object(char *line, t_program *program)
 	return (0);
 }
 
-int		scene_object(char *line, t_program *program)
+int		scene_object(char *line)
 {
  	int	i;
 
 	i = 0;
 	while(line[i] == ' ')
 		i++;
-	if (line[i] == '\n');
+	if (line[i] == '\n')
 		return (EMPTY_LINE);
 	if (line[i] == 'p' && line[i + 1] == 'l' && line[i + 2] == ' ')
 		return (PLANE);
@@ -61,7 +61,7 @@ int		object_present_in_file(char *line, t_program *program)
 	int ret;
 
 	ret = 0;
-	ret = scene_object(line, program);
+	ret = scene_object(line);
 	if (ret)
 		return (ret);
 	else
@@ -80,15 +80,13 @@ void	check_line(char *line, t_program *program)
 
 void	check_parse_identifiers(t_program *program)
 {
-	char **line;
-	int i;
+	char *line;
 
-	i = 0;
 	line = get_next_line(program->scene_fd);
 	while (line)
 	{
 		check_line(line, program);
 
-		line = get_next_line;
+		line = get_next_line(program->scene_fd);
 	}
 }

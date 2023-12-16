@@ -28,6 +28,7 @@ SOURCE				:=		\
 							$(SOURCE_DIR)parse2.c \
 							$(SOURCE_DIR)parse3.c \
 							$(SOURCE_DIR)parse4.c \
+							$(SOURCE_DIR)print1.c
 
 OBJECTS				:=		$(SOURCE:$(SOURCE_DIR)%.c=$(OBJECT_DIR)%.o)
 
@@ -60,7 +61,6 @@ libs:
 							make re -C $(LIBFT_DIR)
 							make clean -C $(LIBFT_DIR)
 							make re -C $(MLX_DIR)
-							make clean -C $(MLX_DIR)
 							echo READY TO MAKE EXECUTABLE...
 
 							

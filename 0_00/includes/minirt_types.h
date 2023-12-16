@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 14:34:48 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 06:23:13 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_camera
 {
 	float	*coord;
 	float	*normal_vector;
-	t_u32	fov;
+	float	fov;
 }	t_camera;
 
 typedef struct s_light

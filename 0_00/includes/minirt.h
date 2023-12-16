@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 16:34:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 05:49:54 by dhadding         ###   ########.fr       */
+/*   Created: 2023/12/17 05:47:05 by dhadding          #+#    #+#             */
+/*   Updated: 2023/12/17 05:48:22 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
+#ifndef MINIRT_H
+# define MINIRT_H
 
-int	main(int argc, char **argv)
-{
-	t_program	*program;
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <errno.h>
+# include <string.h>
+# include <math.h>
+# include "../libft/includes/libft.h"
+# include "minirt_macro.h"
+# include "minirt_types.h"
+# include "minirt_functions.h"
 
-	program = malloc(sizeof(t_program));
-	if (argc == 2)
-	{
-		program_init(program, argv[1]);
-		check_parse_identifiers(program);
-		print_parameters(program);
-	}
-	else
-	{
-		printf("Please Input One Parameter\n");
-		printf("Usage: ./miniRT scene/scene.rt\n");
-		return (1);
-	}
-	return (0);
-}
+#endif
