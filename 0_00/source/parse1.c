@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 07:40:48 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 08:53:45 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,9 @@ void	check_parse_identifiers(t_program *program)
 	while (line)
 	{
 		if (!check_line(line, program))
-		error_parse("Line Invalid");
+			error_parse("Line Invalid");
 
 		line = get_next_line(program->scene_fd);
+
 	}
 }

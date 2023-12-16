@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 08:44:47 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 08:50:45 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,31 +92,38 @@ float	load_dimension(char *line, t_program *p)
 
 float	*load_coordinates(char *line, t_program *p)
 {
-	float	*out;
 	char	*temp;
+	float	*out;
 	int		q;
 	int		l;
 
-	q = 0;
 	l = 0;
+	q = 0;
+	temp = malloc(sizeof(char) * 16);
 	out = malloc(sizeof(float) * 3);
-	temp = malloc(sizeof(char) * 32);
 	while (line[p->i])
 	{
-		q = 0;
-		while (line[p->i] != ',' || line[p->i] != ' ')
-		{
-			if (!ft_isdigit(line[p->i]) || line[p->i] != '.')
-				error_parse("Coordinates ( Input NAN )");
-			temp[q] = line[p->i];
-			q++;
+		while(line[p->i] == ' ' || line[p->i] == '	')
 			p->i++;
+		if (!ft_isdigit(line[p->i]))
+			error_parse("RGB ( Input NAN )");
+		printf("lc line[%d] = %c\n", p->i, line[p->i]);
+		temp[q++] = line[p->i++];
+		if (line[p->i] == ',' || line[p->i] == ' ')
+		{
+			temp[q] = '\0';
+			printf("temp_string = %s\n", temp);
+			out[l] = atof(temp);
+			printf("out[%d] = %f\n", l, out[l]);
+			l++;
+			p->i++;
+			q = 0;
 		}
-		out[l] = atof(temp);
-		l++;
+		if (line[p->i] == ' ' || line[p->i] == '	' || (line[p->i] == ',' && l == 3))
+			break ;
 	}
 	if (l != 3)
-		error_parse("Coordinate value count invalid ( 0.0,0.0,0.0 )");
+		error_parse("RGB Value Count Invalid ( 0,0,0 )");
 	free(temp);
 	return (out);
 }
@@ -134,7 +141,6 @@ t_u32	*load_rgb_values(char *line, t_program *p)
 	out = malloc(sizeof(t_u32) * 3);
 	while (line[p->i])
 	{
-		
 		while(line[p->i] == ' ' || line[p->i] == '	')
 			p->i++;
 		if (!ft_isdigit(line[p->i]))
