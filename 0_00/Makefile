@@ -22,6 +22,12 @@ SOURCE_DIR			:=		source/
 
 SOURCE				:=		\
 							$(SOURCE_DIR)main.c \
+							$(SOURCE_DIR)error1.c \
+							$(SOURCE_DIR)init1.c \
+							$(SOURCE_DIR)parse1.c \
+							$(SOURCE_DIR)parse2.c \
+							$(SOURCE_DIR)parse3.c \
+							$(SOURCE_DIR)parse4.c \
 
 OBJECTS				:=		$(SOURCE:$(SOURCE_DIR)%.c=$(OBJECT_DIR)%.o)
 

@@ -5,4 +5,6 @@
 # 0.00
  - Makefile Complete For Now
  - Header File Inclusions
+ - Untested, but headway for file parser has been made to allow
+ 	paramaters to be loaded for the scene.
 

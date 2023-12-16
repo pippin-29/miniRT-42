@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/15 13:21:52 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/17 05:38:43 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,14 @@ int		scene_object(char *line, t_program *program)
 	i = 0;
 	while(line[i] == ' ')
 		i++;
-	if (line[i] == '\0');
+	if (line[i] == '\n');
 		return (EMPTY_LINE);
 	if (line[i] == 'p' && line[i + 1] == 'l' && line[i + 2] == ' ')
-	{
-		program->no_planes++;
 		return (PLANE);
-	}	
 	else if (line[i] == 's' && line[i + 1] == 'p' && line[i + 2] == ' ')
-	{
-		program->no_spheres++;
 		return (SPHERE);
-	}
 	else if (line[i] == 'c' && line[i + 1] == 'y' && line[i + 2] == ' ')
-	{
-		program->no_cylinders++;
 		return (CYLINDER);
-	}
 	return (0);
 }
 
@@ -78,21 +69,13 @@ int		object_present_in_file(char *line, t_program *program)
 	return (ret);
 }
 
-int	check_line(char *line, t_program *program)
+void	check_line(char *line, t_program *program)
 {
 	int object;
 
 	object = object_present_in_file(line, program);
 	if (object)
-	{
 		parse_line(line, program, object);
-		return (1);
-	}
-	else
-	{
-		printf("Error: Cannot parse;\n");
-		exit(1);
-	}
 }
 
 void	check_parse_identifiers(t_program *program)
