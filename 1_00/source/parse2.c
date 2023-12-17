@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:58 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 08:40:12 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 08:59:05 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,5 @@ void	parse_camera(char *line, t_program *program)
 		error_parse("Too Many Cameras Detected!");
 	program->camera->coord = load_coordinates(line, program);
 	program->camera->normal_vector = load_normal_vector(line, program);
-	program->camera->fov = load_dimension(line, program);	
-
+	program->camera->fov = load_dimension(line, program);
 }
