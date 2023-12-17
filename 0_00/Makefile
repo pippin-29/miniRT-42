@@ -35,15 +35,17 @@ OBJECTS				:=		$(SOURCE:$(SOURCE_DIR)%.c=$(OBJECT_DIR)%.o)
 LINK				:=		$(COMPILER) $(FLAGS) -o $(NAME) $(OBJECTS) $(LIBFT_A) $(MLX_A) \
 							$(LINK_MLX_DIR) $(LINK_MLX) $(LINK_OPENGL_FW) $(LINK_APPKIT_FW) $(ADDSAN)
 
-all: $(NAME)
+all:
+							echo PLEASE STANDBY...
+							make $(NAME)
 
 $(NAME): $(OBJECT_DIR) $(OBJECTS)
 							echo CREATING EXECUTABLE...
 							$(LINK)
 
 $(OBJECTS): $(OBJECT_DIR)%.o: $(SOURCE_DIR)%.c
-							echo PLEASE STANDBY...
-							echo COMPILING OBJECTS...
+							
+							echo 'COMPILING OBJECT ($@)'
 							$(COMPILER) $(FLAGS) -o $@ -c $<
 
 $(OBJECT_DIR):
