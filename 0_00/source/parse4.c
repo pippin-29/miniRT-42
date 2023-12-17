@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 08:50:45 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 08:42:43 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,153 +15,96 @@
 float	load_brightness_ratio(char *line, t_program *p)
 {
 	float	out;
-	char 	*temp;
-	int		q;
+	char	*endptr;
 
-	q = 0;
-	temp = malloc(sizeof(char) * 32);
-	while (line[p->i])
-	{
-		while(line[p->i] == ' ' || line[p->i] == '	')
-			p->i++;
-		printf("lbr line[%d] = %c\n", p->i, line[p->i]);
-		if (!ft_isdigit(line[p->i]) && line[p->i] != '.')
-			error_parse("Brightness Ratio ( Input NAN )");
-		temp[q++] = line[p->i++];
-		if (line[p->i] == ' ' || line[p->i] == '	')
-			break ;
-	}
-	out = atof(temp);
-	printf("lbr = %f\n", out);
+	out = strtof(&line[p->i], &endptr);
 	if (out < 0.0 || out > 1.0)
 		error_parse("Brightness Ratio Range ( 0.0 - 1.0 )");
-	free(temp);
+	p->i = endptr - line;
 	return (out);
 }
 
 float	*load_normal_vector(char *line, t_program *p)
 {
 	float	*out;
-	char	*temp;
-	int		q;
-	int		l;
+	char	*endptr;
+	int		i;
 
-	q = 0;
-	l = 0;
+	i = 0;
 	out = malloc(sizeof(float) * 3);
-	temp = malloc(sizeof(char) * 32);
-	while (line[p->i])
+	out[X] = strtof(&line[p->i], &endptr);
+	if (*endptr == ',')
+		out[Y] = strtof(endptr + 1, &endptr);
+	else
+		error_parse("Normalized Vector Configuration ( ',' Between Values )");
+	if (*endptr == ',')
+		out[Z] = strtof(endptr + 1, &endptr);
+	else
+		error_parse("Normalized Vector Configuration ( ',' Between Values )");
+	p->i = endptr - line;
+	while (i < 3)
 	{
-		q = 0;
-		while (line[p->i] != ',' || line[p->i] != ' ')
-		{
-			if (!ft_isdigit(line[p->i]) || line[p->i] != '.')
-				error_parse("Normallized Vector ( Input NAN )");
-			temp[q] = line[p->i];
-			q++;
-			p->i++;
-		}
-		out[l] = atof(temp);
-		if (out[l] < 0.0 || out[l] > 1.0)
-			error_parse("Normallized Vector Range ( 0.0 - 1.0 )");
-		l++;
+		if (out[i] < 0.0 || out[i] > 1.0)
+			error_parse("Normalized Vector Range ( 0.0 - 1.0 )");
+		i++;
 	}
-	if (l != 3)
-		error_parse("Normalized Vector Coordinate Count Invalid ( 0.0,0.0,0.0 )");
-	free(temp);
 	return (out);
 }
 
 float	load_dimension(char *line, t_program *p)
 {
 	float	out;
-	char 	*temp;
+	char	*endptr;
 
-	temp = malloc(sizeof(char) * 32);
-	while (line[p->i] || line[p->i] != ' ')
-	{
-		if (!ft_isdigit(line[p->i]) || line[p->i] != '.')
-			error_parse("Dimension ( Input NAN )");
-		temp[p->i] = line[p->i];
-		p->i++;
-	}
-	out = atof(temp);
-	free(temp);
+	out = strtof(&line[p->i], &endptr);
+	if (out < 0)
+		error_parse("Dimensions Must Be Positive!");
+	p->i = endptr - line;
 	return (out);
 }
 
 float	*load_coordinates(char *line, t_program *p)
 {
-	char	*temp;
 	float	*out;
-	int		q;
-	int		l;
+	char	*endptr;
 
-	l = 0;
-	q = 0;
-	temp = malloc(sizeof(char) * 16);
 	out = malloc(sizeof(float) * 3);
-	while (line[p->i])
-	{
-		while(line[p->i] == ' ' || line[p->i] == '	')
-			p->i++;
-		if (!ft_isdigit(line[p->i]))
-			error_parse("RGB ( Input NAN )");
-		printf("lc line[%d] = %c\n", p->i, line[p->i]);
-		temp[q++] = line[p->i++];
-		if (line[p->i] == ',' || line[p->i] == ' ')
-		{
-			temp[q] = '\0';
-			printf("temp_string = %s\n", temp);
-			out[l] = atof(temp);
-			printf("out[%d] = %f\n", l, out[l]);
-			l++;
-			p->i++;
-			q = 0;
-		}
-		if (line[p->i] == ' ' || line[p->i] == '	' || (line[p->i] == ',' && l == 3))
-			break ;
-	}
-	if (l != 3)
-		error_parse("RGB Value Count Invalid ( 0,0,0 )");
-	free(temp);
+	out[X] = strtof(&line[p->i], &endptr);
+	if (*endptr == ',')
+		out[Y] = strtof(endptr + 1, &endptr);
+	else
+		error_parse("Coordinate Configuration ( ',' Between Values )");
+	if (*endptr == ',')
+		out[Z] = strtof(endptr + 1, &endptr);
+	else
+		error_parse("Coordinate Configuration ( ',' Between Values )");
+	p->i = endptr - line;
 	return (out);
 }
 
 t_u32	*load_rgb_values(char *line, t_program *p)
 {
-	char	*temp;
 	t_u32	*out;
-	int		q;
-	int		l;
+	char	*endptr;
+	t_u32	i;
 
-	l = 0;
-	q = 0;
-	temp = malloc(sizeof(char) * 4);
+	i = 0;
 	out = malloc(sizeof(t_u32) * 3);
-	while (line[p->i])
+	out[X] = (t_u32)strtoul(&line[p->i], &endptr, 10);
+	if (*endptr == ',')
+		out[Y] = (t_u32)strtoul(endptr + 1, &endptr, 10);
+	else
+		error_parse("RGB Configuration ( ',' Between Values )");
+	if (*endptr == ',')
+		out[Z] = (t_u32)strtoul(endptr + 1, &endptr, 10);
+	else
+		error_parse("RGB Configuration ( ',' Between Values )");
+	p->i = endptr - line;
+	while (i < 3)
 	{
-		while(line[p->i] == ' ' || line[p->i] == '	')
-			p->i++;
-		if (!ft_isdigit(line[p->i]))
-			error_parse("RGB ( Input NAN )");
-		printf("lrgbv line[%d] = %c\n", p->i, line[p->i]);
-		temp[q++] = line[p->i++];
-		if (line[p->i] == ',' || q == 3)
-		{
-			temp[q] = '\0';
-			printf("temp_string = %s\n", temp);
-			out[l] = ft_atoi(temp);
-			printf("out[%d] = %u\n", l, out[l]);
-			l++;
-			p->i++;
-			q = 0;
-		}
-		if (line[p->i] == ' ' || line[p->i] == '	' || (line[p->i] == ',' && l == 3))
-			break ;
+		if (out[i] < 0 || out[i] > 255)
+			error_parse("RGB Value Range ( 0 - 255 )");
+		i++;
 	}
-	if (l != 3)
-		error_parse("RGB Value Count Invalid ( 0,0,0 )");
-	free(temp);
 	return (out);
 }

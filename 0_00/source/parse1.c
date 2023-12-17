@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 08:53:45 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 08:21:55 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,31 @@ int		rt_object(char *line, t_program *program)
 	i = 0;
 	while(line[i] == ' ')
 		i++;
-	printf("i = %d char = %c\n", i, line[i]);
-	if (ft_strcmp(&line[i], "A "))
-	{
-		program->no_amb_light++;
+	program->i = i + 1;
+	if (ft_strncmp(&line[i], "A", 1) == 0)
 		return (AMBIENT);
-	}
-	else if (line[i] == 'C' && line[i + 1] == ' ')
-	{
-		program->no_camera++;
+	else if (ft_strncmp(&line[i], "C", 1) == 0)
 		return (CAMERA);
-	}
-	else if (line[i] == 'L' && line[i + 1] == ' ')
-	{
-		program->no_light++;
+	else if (ft_strncmp(&line[i], "L", 1) == 0)
 		return (LIGHT);
-	}
 	return (0);
 }
 
-int		scene_object(char *line)
+int		scene_object(char *line, t_program *program)
 {
  	int	i;
 
 	i = 0;
 	while(line[i] == ' ')
 		i++;
+	program->i = i + 2;
 	if (line[i] == '\n')
 		return (EMPTY_LINE);
-	if (line[i] == 'p' && line[i + 1] == 'l' && line[i + 2] == ' ')
+	if (ft_strncmp(&line[i], "pl", 2) == 0)
 		return (PLANE);
-	else if (line[i] == 's' && line[i + 1] == 'p' && line[i + 2] == ' ')
+	else if (ft_strncmp(&line[i], "sp", 2) == 0)
 		return (SPHERE);
-	else if (line[i] == 'c' && line[i + 1] == 'y' && line[i + 2] == ' ')
+	else if (ft_strncmp(&line[i], "cy", 2) == 0)
 		return (CYLINDER);
 	return (0);
 }
@@ -62,12 +54,11 @@ int		object_present_in_file(char *line, t_program *program)
 	int ret;
 
 	ret = 0;
-	ret = scene_object(line);
-	printf("%d\n", ret);
+	ret = scene_object(line, program);
 	if (ret)
 		return (ret);
 	else
-		ret = rt_object(line, program);	
+		ret = rt_object(line, program);
 	return (ret);
 }
 
