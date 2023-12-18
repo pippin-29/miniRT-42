@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:58 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 18:24:04 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:41:14 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-t_v32	parse_line(t_s8 *line, t_program *program, t_u16 object)
+t_v8	parse_line(t_s8 *line, t_program *program, t_u16 object)
 {
 	if (object == EMPTY_LINE)
 		return ;
@@ -30,7 +30,7 @@ t_v32	parse_line(t_s8 *line, t_program *program, t_u16 object)
 		parse_plane(line, program);
 }
 
-t_v32	parse_plane(t_s8 *line, t_program *program)
+t_v8	parse_plane(t_s8 *line, t_program *program)
 {
 	if (program->no_planes >= 32)
 		error_parse("Too Many Planes", program);
@@ -40,7 +40,7 @@ t_v32	parse_plane(t_s8 *line, t_program *program)
 	program->no_planes++;
 }
 
-t_v32	parse_cylinder(t_s8 *line, t_program *program)
+t_v8	parse_cylinder(t_s8 *line, t_program *program)
 {
 	if (program->no_cylinders >= 32)
 		error_parse("Too Many Cylinders", program);
@@ -52,7 +52,7 @@ t_v32	parse_cylinder(t_s8 *line, t_program *program)
 	program->no_cylinders++;	
 }
 
-t_v32	parse_sphere(t_s8 *line, t_program *program)
+t_v8	parse_sphere(t_s8 *line, t_program *program)
 {
 	if (program->no_spheres >= 32)
 		error_parse("Too Many Spheres", program); 

@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:35:03 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 18:34:43 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:43:20 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,4 @@ t_s32	render_scene(t_v8 *param);
 /// WINDOW1_C ///
 t_v8	*create_window(t_s8 *title, t_program *program);
 
-
-t_v8 draw_circle(t_program *program, t_u16 center_x, t_u16 center_y, t_u16 radius);
 #endif

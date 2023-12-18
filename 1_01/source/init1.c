@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:57:39 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 18:19:17 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:41:46 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-t_v32	program_init(t_program *program, t_s8 *filename)
+t_v8	program_init(t_program *program, t_s8 *filename)
 {
 	program->scene_fd = open(filename, O_RDONLY);
 	if (program->scene_fd == -1)
@@ -22,14 +22,14 @@ t_v32	program_init(t_program *program, t_s8 *filename)
 	view_init(program);
 }
 
-t_v32	struct_malloc(t_program *program)
+t_v8	struct_malloc(t_program *program)
 {
 	program->sphere = malloc(sizeof(t_sphere *) * 32);
 	program->cylinder = malloc(sizeof(t_cylinder *) * 32);
 	program->plane = malloc(sizeof(t_plane *) * 32);
 }
 
-t_v32	init_env(t_program *program)
+t_v8	init_env(t_program *program)
 {
 	program->no_cylinders = 0;
 	program->no_planes = 0;
@@ -39,7 +39,7 @@ t_v32	init_env(t_program *program)
 	program->no_light = 0;
 }
 
-t_v32	init_line(t_s8 *line, t_program *program)
+t_v8	init_line(t_s8 *line, t_program *program)
 {
 	int object;
 
@@ -58,7 +58,7 @@ t_v32	init_line(t_s8 *line, t_program *program)
 		init_plane(program);
 }
 
-t_v32	terminate_scene_object_structs(t_program *program)
+t_v8	terminate_scene_object_structs(t_program *program)
 {
 	int sp;
 	int pl;

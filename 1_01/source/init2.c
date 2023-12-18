@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:07:12 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 18:16:24 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:41:40 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-t_v32	init_plane(t_program *program)
+t_v8	init_plane(t_program *program)
 {
 	program->plane[program->no_planes] = malloc(sizeof(t_plane));
 	program->plane[program->no_planes]->coord = NULL;
@@ -21,7 +21,7 @@ t_v32	init_plane(t_program *program)
 	program->no_planes++;
 }
 
-t_v32	init_cylinder(t_program *program)
+t_v8	init_cylinder(t_program *program)
 {
 	program->cylinder[program->no_cylinders] = malloc(sizeof(t_cylinder));
 	program->cylinder[program->no_cylinders]->coord = NULL;
@@ -32,7 +32,7 @@ t_v32	init_cylinder(t_program *program)
 	program->no_cylinders++;
 }
 
-t_v32	init_sphere(t_program *program)
+t_v8	init_sphere(t_program *program)
 {
 	program->sphere[program->no_spheres] = malloc(sizeof(t_sphere));
 	program->sphere[program->no_spheres]->coord = NULL;

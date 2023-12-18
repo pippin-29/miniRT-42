@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 18:06:34 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:40:12 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_f32	*load_normal_vector(t_s8 *line, t_program *p)
 {
 	t_f32	*out;
 	t_s8	*endptr;
-	t_u16		i;
+	t_u16	i;
 
 	i = 0;
 	out = malloc(sizeof(t_f32) * 3);
@@ -36,11 +36,13 @@ t_f32	*load_normal_vector(t_s8 *line, t_program *p)
 	if (*endptr == ',')
 		out[Y] = strtof(endptr + 1, &endptr);
 	else
-		error_parse("Normalized Vector Configuration ( ',' Between Values )", p);
+		error_parse("Normalized Vector Configuration ( ',' Between Values )",
+			p);
 	if (*endptr == ',')
 		out[Z] = strtof(endptr + 1, &endptr);
 	else
-		error_parse("Normalized Vector Configuration ( ',' Between Values )", p);
+		error_parse("Normalized Vector Configuration ( ',' Between Values )",
+			p);
 	p->i = endptr - line;
 	while (i < 3)
 	{
