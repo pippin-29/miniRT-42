@@ -13,4 +13,7 @@
 
 # 1.00
  - Set up functions to free memory allocations.
+ - Fixed Initialisation problems, which wouldn't allow memory free on exit.
+ - Allocates objects on a first run of file read.
+ - Parses on second run.
 
