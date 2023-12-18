@@ -6,11 +6,11 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:52 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 05:17:34 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
+#include "../../includes/miniRT.h"
 
 t_f32	load_brightness_ratio(t_s8 *line, t_program *p)
 {

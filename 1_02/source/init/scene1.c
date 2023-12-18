@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keypress1.c                                        :+:      :+:    :+:   */
+/*   scene1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 11:58:40 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:28 by dhadding         ###   ########.fr       */
+/*   Created: 2023/12/18 11:53:38 by dhadding          #+#    #+#             */
+/*   Updated: 2023/12/19 05:17:38 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
+#include "../../includes/miniRT.h"
 
-t_s32	keypress(t_s32 keycode, t_v8 *param)
+t_v8	scene(t_program *program)
+{
+	program->view->window = create_window("Sig's Ray Tracing Engine", program);
+	mlx_hook(program->view->window, 2, 1L << 0, keypress, program);
+	mlx_loop_hook(program->view->mlx, render_scene, program);
+	mlx_loop(program->view->mlx);
+}
+
+t_s32	render_scene(t_v8 *param)
 {
 	t_program	*program;
 
 	program = (t_program *)param;
-	if (keycode == ESC_KEY)
-		exit_program(program, SUCCESS);
+	(void)program;
 	return (0);
 }

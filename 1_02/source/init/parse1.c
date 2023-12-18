@@ -6,11 +6,11 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:38 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 05:17:20 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
+#include "../../includes/miniRT.h"
 
 t_u16	rt_object(t_s8 *line, t_program *program)
 {

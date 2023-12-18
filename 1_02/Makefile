@@ -20,24 +20,43 @@ LINK_APPKIT_FW		:=		-framework AppKit
 OBJECT_DIR			:=		objects/
 SOURCE_DIR			:=		source/
 SCENE_DIR			:=		scene/
+INIT_DIR			:=		init/
+DRAW_DIR			:=		draw/
+MATH_DIR			:=		math/
+INIT_SOURCE_DIR		:=		$(SOURCE_DIR)$(INIT_DIR)
+DRAW_SOURCE_DIR		:=		$(SOURCE_DIR)$(DRAW_DIR)
+MATH_SOURCE_DIR		:=		$(SOURCE_DIR)$(MATH_DIR)
+INIT_OBJ_DIR		:=		$(OBJECT_DIR_DIR)$(INIT_DIR)
+DRAW_OBJ_DIR		:=		$(OBJECT_DIR)$(DRAW_DIR)
+MATH_OBJ_DIR		:=		$(OBJECT_DIR)$(MATH_DIR)
+
+
+INIT_SOURCE			:=		\
+							$(INIT_SOURCE_DIR)error1.c \
+							$(INIT_SOURCE_DIR)exit1.c \
+							$(INIT_SOURCE_DIR)free1.c \
+							$(INIT_SOURCE_DIR)init1.c \
+							$(INIT_SOURCE_DIR)init2.c \
+							$(INIT_SOURCE_DIR)free2.c \
+							$(INIT_SOURCE_DIR)init3.c \
+							$(INIT_SOURCE_DIR)init4.c \
+							$(INIT_SOURCE_DIR)keypress1.c \
+							$(INIT_SOURCE_DIR)main.c \
+							$(INIT_SOURCE_DIR)parse1.c \
+							$(INIT_SOURCE_DIR)parse2.c \
+							$(INIT_SOURCE_DIR)parse3.c \
+							$(INIT_SOURCE_DIR)parse4.c \
+							$(INIT_SOURCE_DIR)scene1.c \
+							$(INIT_SOURCE_DIR)window1.c \
+
+DRAW_SOURCE			:=		\
+
+MATH_SOURCE			:=		\
 
 SOURCE				:=		\
-							$(SOURCE_DIR)error1.c \
-							$(SOURCE_DIR)exit1.c \
-							$(SOURCE_DIR)free1.c \
-							$(SOURCE_DIR)free2.c \
-							$(SOURCE_DIR)init1.c \
-							$(SOURCE_DIR)init2.c \
-							$(SOURCE_DIR)init3.c \
-							$(SOURCE_DIR)init4.c \
-							$(SOURCE_DIR)keypress1.c \
-							$(SOURCE_DIR)main.c \
-							$(SOURCE_DIR)parse1.c \
-							$(SOURCE_DIR)parse2.c \
-							$(SOURCE_DIR)parse3.c \
-							$(SOURCE_DIR)parse4.c \
-							$(SOURCE_DIR)scene1.c \
-							$(SOURCE_DIR)window1.c \
+							$(DRAW_SOURCE) \
+							$(MATH_SOURCE) \
+							$(INIT_SOURCE) \
 
 OBJECTS				:=		$(SOURCE:$(SOURCE_DIR)%.c=$(OBJECT_DIR)%.o)
 
@@ -73,7 +92,9 @@ $(OBJECTS): $(OBJECT_DIR)%.o: $(SOURCE_DIR)%.c
 							$(COMPILER) $(FLAGS) -o $@ -c $<
 
 $(OBJECT_DIR):
-							mkdir -p $(OBJECT_DIR)
+							mkdir -p $(MATH_OBJ_DIR)
+							mkdir -p $(INIT_OBJ_DIR)
+							mkdir -p $(DRAW_OBJ_DIR)
 
 clean:
 							rm -rf $(OBJECT_DIR)

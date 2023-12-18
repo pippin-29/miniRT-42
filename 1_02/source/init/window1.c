@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   window1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 16:34:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:33 by dhadding         ###   ########.fr       */
+/*   Created: 2023/12/18 11:42:25 by dhadding          #+#    #+#             */
+/*   Updated: 2023/12/19 05:17:42 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
+#include "../../includes/miniRT.h"
 
-t_s32	main(t_s32 argc, t_s8 **argv)
+t_v8	*create_window(char *title, t_program *program)
 {
-	t_program	*program;
+	t_v8	*out;
 
-	program = malloc(sizeof(t_program));
-	if (argc == 2)
-	{
-		program_init(program, argv[1]);
-		check_parse_identifiers(program);
-		scene(program);
-	}
-	else
-	{
-		printf("Please Input One Parameter\n");
-		printf("Usage: ./miniRT scene/scene.rt\n");
-		free(program);
-		exit(1);
-	}
-	exit_program(program, SUCCESS);
+	out = mlx_new_window(program->view->mlx, program->view->resolution[X],
+			program->view->resolution[Y], title);
+	return (out);
 }

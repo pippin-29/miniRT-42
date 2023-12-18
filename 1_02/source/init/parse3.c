@@ -6,11 +6,11 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:27:55 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:47 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 05:17:29 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
+#include "../../includes/miniRT.h"
 
 t_v8	parse_light(t_s8 *line, t_program *program)
 {

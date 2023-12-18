@@ -6,11 +6,11 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:24:16 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:19 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 05:17:01 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
+#include "../../includes/miniRT.h"
 
 t_v8	init_amb_light(t_program *program)
 {
