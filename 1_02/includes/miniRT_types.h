@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt_types.h                                     :+:      :+:    :+:   */
+/*   miniRT_types.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:21:27 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 07:11:26 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ typedef struct s_mlx
 	t_v8	*mlx;
 	t_v8	*window;
 	t_u16	resolution[2];
+	t_f32	origin[2];
+	t_f32	vec_3d[3][3];
+	t_f32	vec_2d[3][2];
 }	t_mlx;
 
 typedef struct s_program

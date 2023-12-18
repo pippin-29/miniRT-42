@@ -23,4 +23,6 @@
  - header files rename, inclusion of miniRT_draw.h and miniRT_math.h
  - Makefile altered to automate set of test scenes
 
-# 1.02 
+# 1.02
+ - source now contains directories for respective headers
+ - makefile changed to suit
