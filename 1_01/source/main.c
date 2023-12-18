@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 09:58:29 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:53:31 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	{
 		program_init(program, argv[1]);
 		check_parse_identifiers(program);
-		// print_parameters(program);
+		scene(program);
 	}
 	else
 	{

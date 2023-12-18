@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/17 08:24:59 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:26:04 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,16 @@ typedef struct s_amb_light
 	t_u32	*rgb;
 }	t_amb_light;
 
+typedef struct s_mlx
+{
+	void	*mlx;
+	void	*window;
+	t_u32	resolution[2];
+}	t_mlx;
+
 typedef struct s_program
 {
+	t_mlx		*view;
 	t_sphere	**sphere;
 	t_plane		**plane;
 	t_cylinder	**cylinder;

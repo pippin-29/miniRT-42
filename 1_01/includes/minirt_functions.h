@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:35:03 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 10:45:57 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:22:57 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 /// ERROR1_C ///
 void	error_parse(char *mess, t_program *p);
 void	rt_objects_check(t_program *program);
+
+/// EXIT1_C ///
+void	exit_program(t_program *program);
 
 /// FREE1_C ///
 void	free_program(t_program *program);
@@ -45,6 +48,12 @@ void	init_camera(t_program *program);
 void	init_light(t_program *program);
 void	init_amb_light(t_program *program);
 
+/// INIT4_C ///
+void	view_init(t_program *program);
+
+/// KEYPRESS1_C ///
+int		keypress(int keycode, void *param);
+
 /// PARSE1_C ///
 int		rt_object(char *line, t_program *program);
 int		scene_object(char *line, t_program *program);
@@ -71,4 +80,13 @@ float	load_dimension(char *line, t_program *program);
 float	*load_coordinates(char *line, t_program *program);
 t_u32	*load_rgb_values(char *line, t_program *program);
 
+/// SCENE1_C ///
+void	scene(t_program *program);
+int		render_scene(void *param);
+
+/// WINDOW1_C ///
+void	*create_window(char *title, t_program *program);
+
+
+void draw_circle(t_program *program, int center_x, int center_y, int radius);
 #endif

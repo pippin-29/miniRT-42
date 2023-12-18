@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:57:39 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 10:38:06 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:28:45 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	program_init(t_program *program, char *filename)
 		error_parse("Scene File Descriptor Not Assigned!", program);
 	struct_malloc(program);
 	init_env(program);
+	view_init(program);
 }
 
 void	struct_malloc(t_program *program)

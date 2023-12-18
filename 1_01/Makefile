@@ -23,15 +23,20 @@ SOURCE_DIR			:=		source/
 SOURCE				:=		\
 							$(SOURCE_DIR)main.c \
 							$(SOURCE_DIR)error1.c \
+							$(SOURCE_DIR)exit1.c \
 							$(SOURCE_DIR)free1.c \
 							$(SOURCE_DIR)free2.c \
 							$(SOURCE_DIR)init1.c \
 							$(SOURCE_DIR)init2.c \
 							$(SOURCE_DIR)init3.c \
+							$(SOURCE_DIR)init4.c \
+							$(SOURCE_DIR)keypress1.c \
 							$(SOURCE_DIR)parse1.c \
 							$(SOURCE_DIR)parse2.c \
 							$(SOURCE_DIR)parse3.c \
 							$(SOURCE_DIR)parse4.c \
+							$(SOURCE_DIR)scene1.c \
+							$(SOURCE_DIR)window1.c \
 
 OBJECTS				:=		$(SOURCE:$(SOURCE_DIR)%.c=$(OBJECT_DIR)%.o)
 

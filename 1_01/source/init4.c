@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt_macro.h                                     :+:      :+:    :+:   */
+/*   init4.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 11:18:27 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 11:58:08 by dhadding         ###   ########.fr       */
+/*   Created: 2023/12/18 11:28:58 by dhadding          #+#    #+#             */
+/*   Updated: 2023/12/18 12:10:47 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_MACRO_H
-# define MINIRT_MACRO_H
+#include "../includes/minirt.h"
 
-# define X 0
-# define Y 1
-# define Z 2
-# define R 0
-# define G 1
-# define B 2
-# define LIGHT 5
-# define CAMERA 6
-# define AMBIENT 7
-# define SPHERE 8
-# define PLANE 9
-# define CYLINDER 10
-# define EMPTY_LINE 11
-# define KEY_UP 126
-# define KEY_DOWN 125
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
-# define ESC_KEY 53
-
-
-#endif
+void	view_init(t_program *program)
+{
+	program->view = malloc(sizeof(t_mlx));
+	program->view->resolution[X] = 1024;
+	program->view->resolution[Y] = 768;
+	program->view->mlx = mlx_init();
+	program->view->window = NULL;
+}
