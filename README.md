@@ -9,10 +9,11 @@ https://daniel-42.gitbook.io/daniel-haddington-mygitbook/v/minirt-42/
 # Description
 
 # How To Run
-
-type `` make `` in root of project directory
-type `` ./miniRT scene/scene.rt ``
+`` make libs `` in root of project directory
+`` make scene0 `` up to scene4
 
 # Features
  - 0.00
 	- Parser Stage (Simply prints struct members loaded from file.) (scene.rt)
+ - 1.01
+	- Window Creation
