@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:35:03 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 08:03:44 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 10:45:57 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,36 @@
 # define MINIRT_FUNCTIONS_H
 
 /// ERROR1_C ///
-void	error_parse(char *mess);
+void	error_parse(char *mess, t_program *p);
+void	rt_objects_check(t_program *program);
+
+/// FREE1_C ///
+void	free_program(t_program *program);
+void	free_cylinders(t_program *program);
+void	free_planes(t_program *program);
+void	free_spheres(t_program *program);
+
+/// FREE2_C ///
+void	free_camera(t_program *program);
+void	free_light(t_program *program);
+void	free_amb_light(t_program *program);
 
 /// INIT1_C ///
 void	program_init(t_program *program, char *filename);
 void	struct_malloc(t_program *program);
 void	init_env(t_program *program);
+void	init_line(char *line, t_program *program);
+void	terminate_scene_object_structs(t_program *program);
+
+/// INIT2_C ///
+void	init_plane(t_program *program);
+void	init_cylinder(t_program *program);
+void	init_sphere(t_program *program);
+
+/// INIT3_C ///
+void	init_camera(t_program *program);
+void	init_light(t_program *program);
+void	init_amb_light(t_program *program);
 
 /// PARSE1_C ///
 int		rt_object(char *line, t_program *program);
@@ -33,11 +57,12 @@ void	parse_line(char *line, t_program *program, int object);
 void	parse_plane(char *line, t_program *program);
 void	parse_cylinder(char *line, t_program *program);
 void	parse_sphere(char *line, t_program *program);
-void	parse_camera(char *line, t_program *program);
+
 
 /// PARSE3_C ///
 void	parse_light(char *line, t_program *program);
-void	parse_ambient(char *line, t_program *program);
+void	parse_amb_light(char *line, t_program *program);
+void	parse_camera(char *line, t_program *program);
 
 /// PARSE4_C ///
 float	load_brightness_ratio(char *line, t_program *program);
@@ -45,8 +70,5 @@ float	*load_normal_vector(char *line, t_program *program);
 float	load_dimension(char *line, t_program *program);
 float	*load_coordinates(char *line, t_program *program);
 t_u32	*load_rgb_values(char *line, t_program *program);
-
-/// PRINT1_C ///
-void	print_parameters(t_program *program);
 
 #endif

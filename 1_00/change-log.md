@@ -12,5 +12,5 @@
 	 - objects are contained in separate folder, and are not recompiled.
 
 # 1.00
- - 
+ - Set up functions to free memory allocations.
 

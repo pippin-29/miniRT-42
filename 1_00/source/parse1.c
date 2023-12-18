@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 08:21:55 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 10:36:26 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	check_line(char *line, t_program *program)
 		
 }
 
+
+
 void	check_parse_identifiers(t_program *program)
 {
 	char *line;
@@ -83,10 +85,21 @@ void	check_parse_identifiers(t_program *program)
 	line = get_next_line(program->scene_fd);
 	while (line)
 	{
+		init_line(line, program);
+		
+		line = get_next_line(program->scene_fd);
+	}
+	lseek(program->scene_fd, SEEK_CUR, 0);
+	init_env(program);
+	line = get_next_line(program->scene_fd);
+	while (line)
+	{
 		if (!check_line(line, program))
-			error_parse("Line Invalid");
+			error_parse("Line Invalid", program);
 
 		line = get_next_line(program->scene_fd);
 
 	}
+	terminate_scene_object_structs(program);
+	rt_objects_check(program);
 }
