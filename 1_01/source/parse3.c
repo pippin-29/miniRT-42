@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:27:55 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 10:37:43 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:17:51 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-void	parse_light(char *line, t_program *program)
+t_v32	parse_light(t_s8 *line, t_program *program)
 {
 	program->no_light++;
 	if (program->no_light > 1)
@@ -22,7 +22,7 @@ void	parse_light(char *line, t_program *program)
 	
 }
 
-void	parse_amb_light(char *line, t_program *program)
+t_v32	parse_amb_light(t_s8 *line, t_program *program)
 {
 	program->no_amb_light++;
 	if (program->no_amb_light > 1)
@@ -32,7 +32,7 @@ void	parse_amb_light(char *line, t_program *program)
 	
 }
 
-void	parse_camera(char *line, t_program *program)
+t_v32	parse_camera(t_s8 *line, t_program *program)
 {
 	program->no_camera++;	
 	if (program->no_camera > 1)

@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 09:11:14 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 10:45:02 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:16:07 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-void	free_program(t_program *program)
+t_v32	free_program(t_program *program)
 {
 	if (program->sphere)
 		free_spheres(program);
@@ -28,9 +28,9 @@ void	free_program(t_program *program)
 		free_amb_light(program);
 }
 
-void	free_cylinders(t_program *program)
+t_v32	free_cylinders(t_program *program)
 {
-	t_u32	i;
+	t_u16	i;
 
 	i = 0;
 	while (i < program->no_cylinders)
@@ -48,9 +48,9 @@ void	free_cylinders(t_program *program)
 	free(program->cylinder);
 }
 
-void	free_planes(t_program *program)
+t_v32	free_planes(t_program *program)
 {
-	t_u32	i;
+	t_u16	i;
 
 	i = 0;
 	while (i < program->no_planes)
@@ -68,9 +68,9 @@ void	free_planes(t_program *program)
 	free(program->plane);
 }
 
-void	free_spheres(t_program *program)
+t_v32	free_spheres(t_program *program)
 {
-	t_u32	i;
+	t_u16	i;
 
 	i = 0;
 	while (i < program->no_spheres)

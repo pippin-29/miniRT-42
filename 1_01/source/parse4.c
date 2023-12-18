@@ -6,16 +6,16 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 09:27:57 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:06:34 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-float	load_brightness_ratio(char *line, t_program *p)
+t_f32	load_brightness_ratio(t_s8 *line, t_program *p)
 {
-	float	out;
-	char	*endptr;
+	t_f32	out;
+	t_s8	*endptr;
 
 	out = strtof(&line[p->i], &endptr);
 	if (out < 0.0 || out > 1.0)
@@ -24,14 +24,14 @@ float	load_brightness_ratio(char *line, t_program *p)
 	return (out);
 }
 
-float	*load_normal_vector(char *line, t_program *p)
+t_f32	*load_normal_vector(t_s8 *line, t_program *p)
 {
-	float	*out;
-	char	*endptr;
-	int		i;
+	t_f32	*out;
+	t_s8	*endptr;
+	t_u16		i;
 
 	i = 0;
-	out = malloc(sizeof(float) * 3);
+	out = malloc(sizeof(t_f32) * 3);
 	out[X] = strtof(&line[p->i], &endptr);
 	if (*endptr == ',')
 		out[Y] = strtof(endptr + 1, &endptr);
@@ -51,10 +51,10 @@ float	*load_normal_vector(char *line, t_program *p)
 	return (out);
 }
 
-float	load_dimension(char *line, t_program *p)
+t_f32	load_dimension(t_s8 *line, t_program *p)
 {
-	float	out;
-	char	*endptr;
+	t_f32	out;
+	t_s8	*endptr;
 
 	out = strtof(&line[p->i], &endptr);
 	if (out < 0)
@@ -63,12 +63,12 @@ float	load_dimension(char *line, t_program *p)
 	return (out);
 }
 
-float	*load_coordinates(char *line, t_program *p)
+t_f32	*load_coordinates(t_s8 *line, t_program *p)
 {
-	float	*out;
-	char	*endptr;
+	t_f32	*out;
+	t_s8	*endptr;
 
-	out = malloc(sizeof(float) * 3);
+	out = malloc(sizeof(t_f32) * 3);
 	out[X] = strtof(&line[p->i], &endptr);
 	if (*endptr == ',')
 		out[Y] = strtof(endptr + 1, &endptr);
@@ -82,21 +82,21 @@ float	*load_coordinates(char *line, t_program *p)
 	return (out);
 }
 
-t_u32	*load_rgb_values(char *line, t_program *p)
+t_u16	*load_rgb_values(t_s8 *line, t_program *p)
 {
-	t_u32	*out;
-	char	*endptr;
-	t_u32	i;
+	t_u16	*out;
+	t_s8	*endptr;
+	t_u16	i;
 
 	i = 0;
-	out = malloc(sizeof(t_u32) * 3);
-	out[X] = (t_u32)strtoul(&line[p->i], &endptr, 10);
+	out = malloc(sizeof(t_u16) * 3);
+	out[X] = (t_u16)strtoul(&line[p->i], &endptr, 10);
 	if (*endptr == ',')
-		out[Y] = (t_u32)strtoul(endptr + 1, &endptr, 10);
+		out[Y] = (t_u16)strtoul(endptr + 1, &endptr, 10);
 	else
 		error_parse("RGB Configuration ( ',' Between Values )", p);
 	if (*endptr == ',')
-		out[Z] = (t_u32)strtoul(endptr + 1, &endptr, 10);
+		out[Z] = (t_u16)strtoul(endptr + 1, &endptr, 10);
 	else
 		error_parse("RGB Configuration ( ',' Between Values )", p);
 	p->i = endptr - line;

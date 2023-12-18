@@ -6,13 +6,13 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:53:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 12:23:35 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:28:13 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-void	scene(t_program *program)
+t_v32	scene(t_program *program)
 {
 	program->view->window = create_window("Sig's Ray Tracing Engine", program);
 	mlx_hook(program->view->window, 2, 1L << 0, keypress, program);
@@ -20,7 +20,7 @@ void	scene(t_program *program)
 	mlx_loop(program->view->mlx);
 }
 
-int		render_scene(void *param)
+t_s32	render_scene(t_v32 *param)
 {
 	t_program *program;
 
@@ -29,14 +29,12 @@ int		render_scene(void *param)
 	return (0);
 }
 
-void draw_circle(t_program *program, int center_x, int center_y, int radius)
+t_v32 draw_circle(t_program *program, t_u16 center_x, t_u16 center_y, t_u16 radius)
 {
-    int x, y;
+    t_u16 x, y;
 
     for (double angle = 0; angle < 360; angle += 0.1)
     {
-
-
         x = center_x + radius * cos(angle);
         y = center_y + radius * sin(angle);
 

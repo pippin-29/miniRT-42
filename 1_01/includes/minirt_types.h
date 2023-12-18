@@ -6,62 +6,68 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 11:26:04 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:20:49 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_TYPES_H
 # define MINIRT_TYPES_H
 
+typedef unsigned short	t_u16;
 typedef unsigned int	t_u32;
+typedef float			t_f32;
+typedef char			t_s8;
+typedef int				t_s32;
+typedef void			t_v32;
+typedef long			t_s64;
 
 typedef struct s_sphere
 {
-	float	*coord;
-	float	diam;
-	t_u32	*rgb;
+	t_f32	*coord;
+	t_f32	diam;
+	t_u16	*rgb;
 }	t_sphere;
 
 typedef struct s_plane
 {
-	float	*coord;
-	float	*normal_vector;
-	t_u32	*rgb;
+	t_f32	*coord;
+	t_f32	*normal_vector;
+	t_u16	*rgb;
 }	t_plane;
 
 typedef struct s_cylinder
 {
-	float	*coord;
-	float	*normal_vector;
-	float	diam;
-	float	height;
-	t_u32	*rgb;
+	t_f32	*coord;
+	t_f32	*normal_vector;
+	t_f32	diam;
+	t_f32	height;
+	t_u16	*rgb;
 }	t_cylinder;
 
 typedef struct s_camera
 {
-	float	*coord;
-	float	*normal_vector;
-	float	fov;
+	t_f32	*coord;
+	t_f32	*normal_vector;
+	t_f32	fov;
 }	t_camera;
 
 typedef struct s_light
 {
-	float	*coord;
-	float	brightness;
+	t_f32	*coord;
+	t_f32	brightness;
 }	t_light;
 
 typedef struct s_amb_light
 {
-	float	brightness;
-	t_u32	*rgb;
+	t_f32	brightness;
+	t_u16	*rgb;
 }	t_amb_light;
 
 typedef struct s_mlx
 {
 	void	*mlx;
 	void	*window;
-	t_u32	resolution[2];
+	t_u16	resolution[2];
 }	t_mlx;
 
 typedef struct s_program
@@ -73,13 +79,13 @@ typedef struct s_program
 	t_camera	*camera;
 	t_light		*light;
 	t_amb_light	*amb_light;
-	t_u32		no_spheres;
-	t_u32		no_planes;
-	t_u32		no_cylinders;
-	t_u32		no_light;
-	t_u32		no_amb_light;
-	t_u32		no_camera;
-	t_u32		i;
+	t_u16		no_spheres;
+	t_u16		no_planes;
+	t_u16		no_cylinders;
+	t_u16		no_light;
+	t_u16		no_amb_light;
+	t_u16		no_camera;
+	t_u16		i;
 	int			scene_fd;
 }	t_program;
 

@@ -6,15 +6,15 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:25:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 10:36:26 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:16:47 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minirt.h"
 
-int		rt_object(char *line, t_program *program)
+t_u16	rt_object(t_s8 *line, t_program *program)
 {
-	int	i;
+	t_u16	i;
 
 	i = 0;
 	while(line[i] == ' ')
@@ -29,9 +29,9 @@ int		rt_object(char *line, t_program *program)
 	return (0);
 }
 
-int		scene_object(char *line, t_program *program)
+t_u16	scene_object(t_s8 *line, t_program *program)
 {
- 	int	i;
+ 	t_u16	i;
 
 	i = 0;
 	while(line[i] == ' ')
@@ -49,9 +49,9 @@ int		scene_object(char *line, t_program *program)
 }
 
 
-int		object_present_in_file(char *line, t_program *program)
+t_u16	object_present_in_file(t_s8 *line, t_program *program)
 {
-	int ret;
+	t_u16 ret;
 
 	ret = 0;
 	ret = scene_object(line, program);
@@ -62,9 +62,9 @@ int		object_present_in_file(char *line, t_program *program)
 	return (ret);
 }
 
-int	check_line(char *line, t_program *program)
+t_u16	check_line(t_s8 *line, t_program *program)
 {
-	int object;
+	t_u16 object;
 
 	object = object_present_in_file(line, program);
 	if (object)
@@ -78,9 +78,9 @@ int	check_line(char *line, t_program *program)
 
 
 
-void	check_parse_identifiers(t_program *program)
+t_v32	check_parse_identifiers(t_program *program)
 {
-	char *line;
+	t_s8 *line;
 
 	line = get_next_line(program->scene_fd);
 	while (line)

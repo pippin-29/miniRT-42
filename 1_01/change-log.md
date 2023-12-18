@@ -17,3 +17,6 @@
  - Allocates objects on a first run of file read.
  - Parses on second run.
 
+# 1.01
+ - types changed to a standardised format of my choosing
+ - window creation
