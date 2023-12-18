@@ -6,20 +6,23 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 18:20:49 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:36:29 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_TYPES_H
 # define MINIRT_TYPES_H
 
+typedef void			t_v8;
+typedef char			t_s8;
 typedef unsigned short	t_u16;
 typedef unsigned int	t_u32;
-typedef float			t_f32;
-typedef char			t_s8;
 typedef int				t_s32;
-typedef void			t_v32;
+typedef float			t_f32;
+typedef double			t_f64;
 typedef long			t_s64;
+
+
 
 typedef struct s_sphere
 {
@@ -65,8 +68,8 @@ typedef struct s_amb_light
 
 typedef struct s_mlx
 {
-	void	*mlx;
-	void	*window;
+	t_v8	*mlx;
+	t_v8	*window;
 	t_u16	resolution[2];
 }	t_mlx;
 
@@ -86,7 +89,7 @@ typedef struct s_program
 	t_u16		no_amb_light;
 	t_u16		no_camera;
 	t_u16		i;
-	int			scene_fd;
+	t_s32			scene_fd;
 }	t_program;
 
 
