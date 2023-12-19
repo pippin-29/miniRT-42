@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:53:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/19 05:17:38 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:49:52 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ t_s32	render_scene(t_v8 *param)
 	t_program	*program;
 
 	program = (t_program *)param;
-	(void)program;
+	
+	printf(" VXx = %f | VXy = %f\n", 100 * program->view->vec_2d[X][X], 100 * program->view->vec_2d[X][Y]);
+	printf(" VYx = %f | VYy = %f\n", 100 * program->view->vec_2d[Y][X], 100 * program->view->vec_2d[Y][Y]);
+	printf(" VZx = %f | VZy = %f\n", 100 * program->view->vec_2d[Z][X], 100 * program->view->vec_2d[Z][Y]);
+	pause();
+	
 	return (0);
 }

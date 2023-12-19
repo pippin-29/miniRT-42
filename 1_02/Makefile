@@ -26,7 +26,7 @@ MATH_DIR			:=		math/
 INIT_SOURCE_DIR		:=		$(SOURCE_DIR)$(INIT_DIR)
 DRAW_SOURCE_DIR		:=		$(SOURCE_DIR)$(DRAW_DIR)
 MATH_SOURCE_DIR		:=		$(SOURCE_DIR)$(MATH_DIR)
-INIT_OBJ_DIR		:=		$(OBJECT_DIR_DIR)$(INIT_DIR)
+INIT_OBJ_DIR		:=		$(OBJECT_DIR)$(INIT_DIR)
 DRAW_OBJ_DIR		:=		$(OBJECT_DIR)$(DRAW_DIR)
 MATH_OBJ_DIR		:=		$(OBJECT_DIR)$(MATH_DIR)
 
@@ -50,8 +50,11 @@ INIT_SOURCE			:=		\
 							$(INIT_SOURCE_DIR)window1.c \
 
 DRAW_SOURCE			:=		\
+							$(DRAW_SOURCE_DIR)line.c \
 
 MATH_SOURCE			:=		\
+							$(MATH_SOURCE_DIR)vector_translation.c \
+							$(MATH_SOURCE_DIR)vector_3d.c \
 
 SOURCE				:=		\
 							$(DRAW_SOURCE) \

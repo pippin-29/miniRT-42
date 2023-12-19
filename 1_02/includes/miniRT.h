@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 05:47:05 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/18 20:24:17 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:27:39 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@
 # include "miniRT_types.h"
 # include "miniRT_init.h"
 # include "miniRT_math.h"
+# include "miniRT_draw.h"
 
 #endif
