@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:35:03 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/19 10:27:52 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:03:57 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ t_v8	init_amb_light(t_program *program);
 
 /// INIT4_C ///
 t_v8	view_init(t_program *program);
+t_v8	init_world(t_program *program);
+t_v8	assign_translation(t_program *program);
 
 /// KEYPRESS1_C ///
 t_s32	keypress(int keycode, t_v8 *param);
@@ -71,6 +73,7 @@ t_v8	parse_sphere(t_s8 *line, t_program *program);
 t_v8	parse_light(t_s8 *line, t_program *program);
 t_v8	parse_amb_light(t_s8 *line, t_program *program);
 t_v8	parse_camera(t_s8 *line, t_program *program);
+t_v8	check_normal_vector(t_f32 *n_vec, t_program *program);
 
 /// PARSE4_C ///
 t_f32	load_brightness_ratio(t_s8 *line, t_program *program);

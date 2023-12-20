@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:43:51 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/19 05:17:34 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:42:00 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,11 @@ t_f32	*load_normal_vector(t_s8 *line, t_program *p)
 	p->i = endptr - line;
 	while (i < 3)
 	{
-		if (out[i] < 0.0 || out[i] > 1.0)
+		if (out[i] < -1.0 || out[i] > 1.0)
 			error_parse("Normalized Vector Range ( 0.0 - 1.0 )", p);
 		i++;
 	}
+	check_normal_vector(out, p);
 	return (out);
 }
 

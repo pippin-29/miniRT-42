@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:34:54 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/19 10:06:00 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:17:27 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,19 @@ typedef struct s_mlx
 	t_v8	*mlx;
 	t_v8	*window;
 	t_u16	resolution[2];
-	t_f32	origin[2];
-	t_f32	**vec_3d;
-	t_f32	**vec_2d;
 }	t_mlx;
+
+typedef struct s_world
+{
+	
+} t_world;
+
+typedef struct s_space
+{
+	t_f32	screen[2];
+	t_f32	ndc[2];
+	t_u16	raster[2];
+} t_space;
 
 typedef struct s_program
 {
@@ -83,6 +92,7 @@ typedef struct s_program
 	t_camera	*camera;
 	t_light		*light;
 	t_amb_light	*amb_light;
+	t_space		*space;
 	t_u16		no_spheres;
 	t_u16		no_planes;
 	t_u16		no_cylinders;

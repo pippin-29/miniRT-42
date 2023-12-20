@@ -50,11 +50,10 @@ INIT_SOURCE			:=		\
 							$(INIT_SOURCE_DIR)window1.c \
 
 DRAW_SOURCE			:=		\
-							$(DRAW_SOURCE_DIR)line.c \
+							$(DRAW_SOURCE_DIR)sphere.c \
 
 MATH_SOURCE			:=		\
-							$(MATH_SOURCE_DIR)vector_translation.c \
-							$(MATH_SOURCE_DIR)vector_3d.c \
+							$(MATH_SOURCE_DIR)space.c \
 
 SOURCE				:=		\
 							$(DRAW_SOURCE) \

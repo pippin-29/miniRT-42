@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:57:39 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/19 05:16:53 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:42:50 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_v8	program_init(t_program *program, t_s8 *filename)
 
 t_v8	struct_malloc(t_program *program)
 {
+	program->space = malloc(sizeof(t_space));
 	program->sphere = malloc(sizeof(t_sphere *) * 32);
 	program->cylinder = malloc(sizeof(t_cylinder *) * 32);
 	program->plane = malloc(sizeof(t_plane *) * 32);

@@ -6,7 +6,7 @@
 /*   By: dhadding <operas.referee.0e@icloud.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:53:38 by dhadding          #+#    #+#             */
-/*   Updated: 2023/12/20 07:20:58 by dhadding         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:03:38 by dhadding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ t_s32	render_scene(t_v8 *param)
 	t_program	*program;
 
 	program = (t_program *)param;
-	(t_v8)program;
-	pause();
 	
+	draw_sphere(0, program);
 	return (0);
 }
