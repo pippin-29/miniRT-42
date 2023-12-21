@@ -50,7 +50,7 @@ INIT_SOURCE			:=		\
 							$(INIT_SOURCE_DIR)window1.c \
 
 DRAW_SOURCE			:=		\
-							$(DRAW_SOURCE_DIR)sphere.c \
+							$(DRAW_SOURCE_DIR)pixel.c \
 
 MATH_SOURCE			:=		\
 							$(MATH_SOURCE_DIR)space.c \
