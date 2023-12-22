@@ -4,6 +4,10 @@ description: A list of resources i found useful for understanding the assignment
 
 # Resources
 
+I found myself extensively using ChatGPT to find my way with the geometry and linear algebra required in miniRT.\
+\
+I also picked up a copy of "Linear Algebra - A Modern Introduction" by David Poole
+
 {% embed url="https://www.scratchapixel.com/lessons/3d-basic-rendering/computing-pixel-coordinates-of-3d-point/mathematics-computing-2d-coordinates-of-3d-points.html" %}
 scratchapixel.com
 {% endembed %}
