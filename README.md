@@ -17,3 +17,5 @@ https://daniel-42.gitbook.io/daniel-haddington-mygitbook/v/minirt-42/
 	- Parser Stage (Simply prints struct members loaded from file.) (scene.rt)
  - 1.01
 	- Window Creation
+ - 1.02
+	- Colour Shading

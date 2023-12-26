@@ -31,3 +31,10 @@
 
 * source now contains directories for respective headers
 * makefile changed to suit
+* rgb_2_hex function created with shade/brightness multiplier
+* parser now accepts further parameters for orientation vectors. (one 3d normalized orientation vector per axis), for cylinders, planes, and cameras.
+* more makefile changes(wildcard, simplification of folder system(render and init... for now), etc.)
+* current scene/scene.rt provides view of shading functionality in steps of 0.2 brightness (0.0-1.0)
+ - colour can be change in configuration file in RGB section on line with identifier 'A'
+
+
