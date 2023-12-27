@@ -1,10 +1,11 @@
 # Finding the Correct Camera Orientation
 
-The orientation of the camera system can be define in the azimuth-elevation spherical coordinate system.
+The orientation of the camera system can be define in the azimuth-elevation spherical coordinate system.\
+![](.gitbook/assets/horizontal-coordinate-system.png)
 
 The azimuth represents the rotation around the vertical axis.
 
-The elevation represents the rotation above or below the horizontal plane.
+The elevation(altitude) represents the rotation above or below the horizontal plane.
 
 These parameters can be assigned as angles in the C programming language:
 
