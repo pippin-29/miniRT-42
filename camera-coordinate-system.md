@@ -13,7 +13,7 @@ I am under the impression, after learning some more about linear algebra and its
 
 $$Vcamera = \begin{bmatrix}  Vxx & Vyx & vzx\\  Vxy & Vyy & Vzy\\ Vxz & Vyz & Vzz \\ \end{bmatrix}$$
 
-This matrix follows a convention that each column defines a 3D normalized vector. If you choose to represent the opposite format (each row is a vector), continue to follow that format.
+This matrix follows a convention that each column defines a 3D normalized vector. If you choose to represent the opposite format (each row is a vector), continue to follow that format. (Including the later used 4x4 transformation matrix, where translation will be placed on the final row.)
 
 For simplicity sake, The corresponding axis component of each vector can be 1, whilst the other two are 0. But the possibility to define each vector component in range, provides some room for error.
 
