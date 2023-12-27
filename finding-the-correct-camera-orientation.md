@@ -48,11 +48,11 @@ $$Rx(\phi) = \begin{bmatrix} 1& 0 & 0\\ 0 & cos(\phi) & -sin(\phi)\\ 0 & sin(\ph
 
 And so our transformation matrix becomes:
 
-$$Mfinal = \begin{bmatrix}  Ry(\theta) . Rx(\phi) & \begin{bmatrix} Px \\ Py \\ Pz \\ \end{bmatrix}\\  0 & 1 \\ \end{bmatrix}$$
-
 So if all vectors are determined to be orthogonal and having a precise approximation of length 1, we should be able to use the values computed from the transformation matrix to define the translated position of camera origin and the placement of vector x, y and z within our world coordinate system.
 
 
+
+$$Mfinal = \begin{bmatrix}  Ry(\theta)\ \cdotp Rx(\phi) & \begin{bmatrix} Px \\ Py \\ Pz \\ \end{bmatrix}\\  0 & 1 \\ \end{bmatrix}$$
 
 
 
