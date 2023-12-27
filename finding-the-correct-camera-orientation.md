@@ -13,6 +13,8 @@ $$azimuth = \theta$$
 
 $$elevation = \phi$$
 
+
+
 We have the matrix:\
 $$Vcamera = \begin{bmatrix}  Vxx & Vyx & vzx\\  Vxy & Vyy & Vzy\\ Vxz & Vyz & Vzz \\ \end{bmatrix}$$3D Normalized Orientation Vectors
 
@@ -36,10 +38,43 @@ arctan is defined as the inverse tangent at a point around a unit circle.\
 
 Now we can use the correct two rotation matrices in combination to define the orientation of the camera relative to the world coordinate system.
 
-
-
 $$R = Ry(\theta)  \cdot Rx(\phi)$$
 
 $$Ry(\theta) = \begin{bmatrix} cos(\theta) & 0 & sin(\theta)\\ 0 & 1 & 0\\ -sin(\theta) & 0 & cos(\theta)\end{bmatrix}$$
 
-$$Rx(phi) = \begin{bmatrix} 1& 0 & 0\\ 0 & cos(phi) & -sin(phi)\\ 0 & sin(phi) & cos(phi)\end{bmatrix}$$
+$$Rx(\phi) = \begin{bmatrix} 1& 0 & 0\\ 0 & cos(\phi) & -sin(\phi)\\ 0 & sin(\phi) & cos(\phi)\end{bmatrix}$$
+
+
+
+And so our transformation matrix becomes:
+
+$$Mfinal = \begin{bmatrix}  Ry(\theta) . Rx(\phi) & \begin{bmatrix} Px \\ Py \\ Pz \\ \end{bmatrix}\\  0 & 1 \\ \end{bmatrix}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
