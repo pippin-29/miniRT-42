@@ -8,7 +8,7 @@ Each axis can be represented by a normalized orientation vector.
 
 $$Vx = \begin{bmatrix}  1 & 0 & 0\end{bmatrix}$$
 
-$$\start{bmatrix} 1 & 2\\ \end{bmatrix}$$$$Vy = \begin{bmatrix}  0& 1 & 0\end{bmatrix}$$
+$$Vy = \begin{bmatrix}  0& 1 & 0\end{bmatrix}$$
 
 $$Vz = \begin{bmatrix}  0 & 0 & 1\end{bmatrix}$$
 
